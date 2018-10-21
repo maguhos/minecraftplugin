@@ -4,6 +4,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
+/*
+Plugin demo2
+
+*/
 
 public class CPdemo2 extends JavaPlugin {
      @Override
