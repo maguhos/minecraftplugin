@@ -6,7 +6,6 @@ import org.bukkit.ChatColor;
 
 /*
 Plugin demo2, som laver laver en ny opskrift
-
 */
 
 public class CPdemo2 extends JavaPlugin {
