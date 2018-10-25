@@ -5,7 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 /* 
-Demo5 tilføjer items som hat
+Demo6 tiføjer en ny kommando
  */
 public class CPdemo6 extends JavaPlugin {
 
