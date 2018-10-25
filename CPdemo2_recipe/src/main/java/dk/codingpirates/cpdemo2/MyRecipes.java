@@ -1,3 +1,7 @@
+/**
+ *
+ * @author maguhos
+ */
 package dk.codingpirates.cpdemo2;
 
 import java.util.ArrayList;
