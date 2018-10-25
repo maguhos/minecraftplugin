@@ -1,3 +1,8 @@
+/**
+ *
+ * @author maguhos
+ */
+
 package dk.codingpirates.cpdemo4;
 
 import java.lang.reflect.Array;

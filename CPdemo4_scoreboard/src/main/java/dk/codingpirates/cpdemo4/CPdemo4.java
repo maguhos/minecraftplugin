@@ -35,7 +35,7 @@ public class CPdemo4 extends JavaPlugin implements Listener {
         Player p = event.getPlayer();
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
-        scoreboard.setPlayerText(p, "Du er logget på serveren\nkl." + formatter.format(date) + "\n");
+        scoreboard.setPlayerText(p, "Du er logget på " + ChatColor.GREEN + "serveren\nkl." + formatter.format(date) + "\n");
     }
 
 }
