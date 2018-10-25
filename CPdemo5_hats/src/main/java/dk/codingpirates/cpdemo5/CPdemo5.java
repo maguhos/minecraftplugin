@@ -5,7 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 /* 
-Demo3 Hente og gemme settings
+Demo5 tilføjer items som hat
  */
 public class CPdemo5 extends JavaPlugin {
 
