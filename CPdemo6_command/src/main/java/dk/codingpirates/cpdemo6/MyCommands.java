@@ -46,4 +46,20 @@ public class MyCommands extends CommandManager {
         return CommandManager.CommandFinished.DONE;
         
     }
+     @CommandManager.Cmd(cmd = "test2", args = "<navn> <price> [player]", 
+            argTypes = {Arg.ArgString.class, Arg.ArgDouble.class, Arg.ArgPlayer.class},
+            help = "test2 <navn> <price>", longhelp = "test2 <navn> <price>.",
+            only = CommandManager.CommandOnly.OP, permission = "test2")
+    public static CommandManager.CommandFinished cmd_test2(CommandSender sender, Object[] args) {
+        Player player = (Player) sender;
+        String name = args[0].toString();
+        double price = (double) args[1];
+        Player p = (Player) args[2];
+        player.sendMessage("You have enter correct data " + name + " " + price);
+        if (p != null) {
+            player.sendMessage("Du har tastet "+p.getName());
+        }
+        return CommandManager.CommandFinished.DONE;
+        
+    }
 }
