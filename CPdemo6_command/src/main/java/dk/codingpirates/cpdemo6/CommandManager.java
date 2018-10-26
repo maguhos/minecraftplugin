@@ -1,6 +1,5 @@
 package dk.codingpirates.cpdemo6;
 
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.annotation.ElementType;
@@ -48,10 +47,10 @@ import org.bukkit.plugin.java.JavaPlugin;
  * node","command");
  *
  * @author Stumblinbear
- * https://gist.github.com/Stumblinbear/c27f1fe584c130690b8f
+ * https://gist.github.com/Stumblinbear/c27f1fe584c130690b8f minor changes
+ * @maguhos
  */
 public class CommandManager implements TabCompleter, CommandExecutor {
-       public static CommandFinished oldDONE;
 
     static boolean GLOBAL_DEBUG = false;
 
@@ -68,7 +67,6 @@ public class CommandManager implements TabCompleter, CommandExecutor {
         sender.sendMessage(ChatColor.YELLOW + "Debug mode is now: " + (GLOBAL_DEBUG ? ChatColor.GREEN + "ON" : ChatColor.RED + "OFF"));
         return CommandFinished.DONE;
     }*/
-    
     private static HashMap<Class<? extends AbstractArg<?>>, AbstractArg<?>> argInstances = new HashMap<Class<? extends AbstractArg<?>>, AbstractArg<?>>();
 
     private ArrayList<Cmd> commands = new ArrayList<Cmd>();
@@ -90,16 +88,6 @@ public class CommandManager implements TabCompleter, CommandExecutor {
             final Field bukkitCommandMap = Bukkit.getServer().getClass().getDeclaredField("commandMap");
 
             bukkitCommandMap.setAccessible(true);
-            /*test for at fjerne commands
-            SimpleCommandMap simpleCommandMap = (SimpleCommandMap) bukkitCommandMap.get(Bukkit.getServer());
-            for (Command c : simpleCommandMap.getCommands()) {
-                if (c.getName().equalsIgnoreCase(command)) {
-                    //System.out.println("fjerner command "+c.getName());
-                    //c.unregister(simpleCommandMap);
-                   
-                }
-            }
-            //slut test */
             CommandMap commandMap = (CommandMap) bukkitCommandMap.get(Bukkit.getServer());
             Command k = commandMap.getCommand(command);
             PluginCommand pluginCommand;
@@ -119,7 +107,6 @@ public class CommandManager implements TabCompleter, CommandExecutor {
                 pluginCommand.setAliases(Arrays.asList(aliases));
             }
             commandMap.register(command, pluginCommand);
-
             loadCommandClass(this.getClass());
         } catch (Exception e) {
             e.printStackTrace();
@@ -185,35 +172,6 @@ public class CommandManager implements TabCompleter, CommandExecutor {
      * Get a prediction of the next command argument.
      */
     private List<String> getPredicted(Cmd c, String token, int i) {
-        String[] cmdArg = c.cmd().split(" ");
-        // If no token, return all possible commands.
-        if (token == "") {
-            return Arrays.asList(new String[]{cmdArg[0]});
-        }
-        // If the amount of args is more than available, or it doesn't start with the token.
-        if (i >= cmdArg.length) {
-            int argNum = i - cmdArg.length;
-            if (argNum >= c.argTypes().length) {
-                return null;
-            } else {
-                if (!argInstances.containsKey(c.argTypes()[argNum])) {
-                    try {
-                        argInstances.put(c.argTypes()[argNum], c.argTypes()[argNum].newInstance());
-                    } catch (Exception e) {
-                    }
-                }
-                AbstractArg<?> absArg = argInstances.get(c.argTypes()[argNum]);
-                return absArg.getPredictions(token.toLowerCase());
-            }
-            // If it doesn't start with the token.
-        } else if (!cmdArg[i].toLowerCase().startsWith(token.toLowerCase())) {
-            return null;
-        }
-        // It must be a match!
-        return Arrays.asList(new String[]{cmdArg[i]});
-    }
-
-    private List<String> oldgetPredicted(Cmd c, String token, int i) {
         String[] cmdArg = c.cmd().split(" ");
         // If no token, return all possible commands.
         if (token == "") {
