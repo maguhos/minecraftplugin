@@ -2,7 +2,6 @@
  *
  * @author maguhos
  */
-
 package dk.codingpirates.cpdemo4;
 
 import java.util.Arrays;
@@ -122,7 +121,10 @@ public class ScoreboardManager implements Listener {
     }
 
     public void stopOne(Player p) {
-        players.remove(p);
+        players = (Collection<Player>) Bukkit.getOnlinePlayers();
+        if (players.contains(p)) {
+            players.remove(p);
+        }
         display.remove(p.getUniqueId());
         p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
     }
