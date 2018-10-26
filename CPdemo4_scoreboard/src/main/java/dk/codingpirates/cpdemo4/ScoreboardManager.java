@@ -5,20 +5,19 @@
 
 package dk.codingpirates.cpdemo4;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.UUID;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getServer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -110,7 +109,7 @@ public class ScoreboardManager implements Listener {
     }
 
     @EventHandler
-    public void onPlayerLeave(PlayerJoinEvent event) {
+    public void onPlayerLeave(PlayerQuitEvent event) {
         Player p = event.getPlayer();
         stopOne(p);
     }
