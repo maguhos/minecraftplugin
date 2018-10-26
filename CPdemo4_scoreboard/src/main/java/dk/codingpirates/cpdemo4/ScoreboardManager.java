@@ -109,7 +109,7 @@ public class ScoreboardManager implements Listener {
 
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
-        Player p = event.getPlayer();
+        Player p = (Player) event.getPlayer();
         stopOne(p);
     }
 
@@ -123,7 +123,7 @@ public class ScoreboardManager implements Listener {
     public void stopOne(Player p) {
         players = (Collection<Player>) Bukkit.getOnlinePlayers();
         if (players.contains(p)) {
-            players.remove(p);
+            //players.remove(p);
         }
         display.remove(p.getUniqueId());
         p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
