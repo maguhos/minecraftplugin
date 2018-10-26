@@ -47,9 +47,8 @@ import org.bukkit.plugin.java.JavaPlugin;
  * node","command");
  *
  * @author Stumblinbear
- * https://gist.github.com/Stumblinbear/c27f1fe584c130690b8f 
- * @maguhos
- * minor changes
+ * https://gist.github.com/Stumblinbear/c27f1fe584c130690b8f
+ * @maguhos minor changes
  */
 public class CommandManager implements TabCompleter, CommandExecutor {
 
@@ -312,11 +311,12 @@ public class CommandManager implements TabCompleter, CommandExecutor {
                     } else if (bestFit.only() == CommandOnly.PLAYER) {
                         return CommandFinished.NOCONSOLE;
                     }
-
+   
                     // Check for the "op" argument and permission argument
-                    if ((bestFit.only() == CommandOnly.OP ? !sender.isOp() : false)
-                            || (bestFit.permission() != "" ? !sender.hasPermission(permissionScheme + "." + bestFit.permission()) : false)) {
-                        return CommandFinished.PERMISSION;
+                    if (bestFit.only() == CommandOnly.OP && !sender.isOp()) {
+                        if (!bestFit.permission().equals("") && !sender.hasPermission(permissionScheme + "." + bestFit.permission())) {
+                            return CommandFinished.PERMISSION;
+                        }
                     }
 
                     // Split up the args; arguments in quotes count as a single argument.
