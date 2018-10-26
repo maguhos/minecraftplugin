@@ -24,7 +24,7 @@ public class CPdemo5  extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player p = event.getPlayer();
-        ItemStack item = new ItemStack(Material.ACACIA_TRAPDOOR);
+        ItemStack item = new ItemStack(Material.BEACON);
         hat.addHat(p, item);
     }
 
