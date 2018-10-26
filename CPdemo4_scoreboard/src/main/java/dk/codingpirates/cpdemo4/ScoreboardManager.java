@@ -6,12 +6,15 @@ package dk.codingpirates.cpdemo4;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.UUID;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getServer;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,7 +27,8 @@ import org.bukkit.scoreboard.DisplaySlot;
 public class ScoreboardManager implements Listener {
 
     private static ScoreboardManager instance = null;
-    private Collection<Player> players;
+    //private Collection<Player> players;
+    private HashSet<Player> players = new HashSet<>();
     private TreeMap<String, String> display = new TreeMap<>();
     private int delay = 40;
     private boolean taskisrunning = false;
@@ -52,8 +56,7 @@ public class ScoreboardManager implements Listener {
 
     public void starttask(Plugin plugin) {
         getServer().getPluginManager().registerEvents(this, plugin);
-        players = (Collection<Player>) Bukkit.getOnlinePlayers();
-        for (Player p : players) {
+        for (Player p : Bukkit.getOnlinePlayers()) {
             startOne(p);
         }
         taskisrunning = true;
@@ -110,6 +113,8 @@ public class ScoreboardManager implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
         Player p = (Player) event.getPlayer();
+        Bukkit.getConsoleSender().sendMessage("mmmm");
+        p.sendMessage("mmmm");
         stopOne(p);
     }
 
@@ -121,12 +126,11 @@ public class ScoreboardManager implements Listener {
     }
 
     public void stopOne(Player p) {
-        players = (Collection<Player>) Bukkit.getOnlinePlayers();
         if (players.contains(p)) {
-            //players.remove(p);
+            players.remove(p);
+            display.remove(p.getUniqueId().toString());
+            p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
         }
-        display.remove(p.getUniqueId());
-        p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
     }
 
     public boolean updateDisplay(Player p) {
