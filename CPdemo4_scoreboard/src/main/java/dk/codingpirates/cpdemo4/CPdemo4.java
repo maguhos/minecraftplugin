@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
+import static org.bukkit.Bukkit.getServer;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,6 +23,7 @@ public class CPdemo4 extends JavaPlugin implements Listener {
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[" + this.getName() + "] Enabling plugin");
         scoreboard.starttask(this);
+        getServer().getPluginManager().registerEvents(this, this);
     }
 
     @Override
