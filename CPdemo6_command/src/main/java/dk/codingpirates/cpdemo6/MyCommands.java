@@ -39,12 +39,11 @@ public class MyCommands extends CommandManager {
         String name = args[0].toString();
         double price = (double) args[1];
         
-        player.sendMessage("You have enter correct data " + name + " " + price);
-        if (args[2] != null) {
+        player.sendMessage("Du har tastet rigtigt " + name + " " + price);
+        if (args.length>2 && args[2] != null) {
             Player p = (Player) args[2];
             player.sendMessage("Du har tastet "+p.getName());
         }
-        return CommandManager.CommandFinished.DONE;
-        
+        return CommandManager.CommandFinished.DONE;   
     }
 }
