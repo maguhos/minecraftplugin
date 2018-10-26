@@ -47,8 +47,9 @@ import org.bukkit.plugin.java.JavaPlugin;
  * node","command");
  *
  * @author Stumblinbear
- * https://gist.github.com/Stumblinbear/c27f1fe584c130690b8f minor changes
+ * https://gist.github.com/Stumblinbear/c27f1fe584c130690b8f 
  * @maguhos
+ * minor changes
  */
 public class CommandManager implements TabCompleter, CommandExecutor {
 

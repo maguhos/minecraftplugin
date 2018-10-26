@@ -9,14 +9,12 @@ import org.bukkit.event.Listener;
 /* 
 Demo6 tiføjer en ny kommando
  */
-public class CPdemo6 extends JavaPlugin implements Listener{
+public class CPdemo6 extends JavaPlugin implements Listener {
 
-   
     @Override
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[" + this.getName() + "] Enabling plugin");
         new MyCommands(this);
-        getServer().getPluginManager().registerEvents(this, this);
     }
 
     @Override
