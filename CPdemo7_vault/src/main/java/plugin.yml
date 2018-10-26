@@ -1,0 +1,4 @@
+name: CPdemo7
+main: dk.codingpirates.cpdemo7.CPdemo7
+version: 1.0.0
+depend: [Vault]
