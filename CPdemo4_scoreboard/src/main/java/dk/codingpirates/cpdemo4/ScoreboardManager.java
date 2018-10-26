@@ -27,7 +27,6 @@ import org.bukkit.scoreboard.DisplaySlot;
 public class ScoreboardManager implements Listener {
 
     private static ScoreboardManager instance = null;
-    //private Collection<Player> players;
     private HashSet<Player> players = new HashSet<>();
     private TreeMap<String, String> display = new TreeMap<>();
     private int delay = 40;
