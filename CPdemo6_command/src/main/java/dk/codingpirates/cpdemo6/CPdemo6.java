@@ -13,7 +13,7 @@ public class CPdemo6 extends JavaPlugin {
     @Override
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[" + this.getName() + "] Enabling plugin");
-        
+        new MyCommands(this);
     }
 
     @Override
