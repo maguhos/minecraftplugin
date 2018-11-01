@@ -9,7 +9,7 @@ import org.bukkit.event.Listener;
 /* 
 Demo6 tiføjer en ny kommando
  */
-public class CPdemo6 extends JavaPlugin implements Listener {
+public class CPdemo6 extends JavaPlugin {
 
     @Override
     public void onEnable() {
