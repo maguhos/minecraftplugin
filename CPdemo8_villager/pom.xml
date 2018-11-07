@@ -40,12 +40,7 @@
             <id>papermc</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
-        <repository>
-            <id>mojang</id>
-            <name>Mojang's Repository</name>
-            <url>https://libraries.minecraft.net/</url>
-        </repository>
-         
+        
     </repositories>
     <dependencies>
         <dependency>
@@ -61,13 +56,6 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
-            <version>1.13.2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/spigot-1.13.2.jar</systemPath>
-        </dependency>
-        <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>VaultAPI</artifactId>
             <version>1.6</version>
@@ -79,11 +67,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>com.mojang</groupId>
-            <artifactId>authlib</artifactId>
-            <version>1.5.21</version>
-        </dependency>
+        
     </dependencies>
     <build>
         <defaultGoal>clean package install</defaultGoal>
