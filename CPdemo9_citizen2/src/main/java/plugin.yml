@@ -1,0 +1,5 @@
+name: CPdemo9
+main: dk.codingpirates.cpdemo.CPdemo9
+version: 1.0.0
+api-version: 1.13
+depend: [Citizens]
