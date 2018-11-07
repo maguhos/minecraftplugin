@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+<groupId>dk.codingpirates</groupId>
+    <artifactId>CPdemo-minecraftplugin</artifactId>
+    <version>0</version>
+    <packaging>pom</packaging>
+    <url>https://github.com/maguhos/minecraftplugin</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <modules>
+        <module>CPdemo1_startstop</module>
+        <module>CPdemo2_recipe</module>
+        <module>CPdemo3_configfile</module>
+        <module>CPdemo4_scoreboard</module>
+        <module>CPdemo5_hats</module>
+        <module>CPdemo6_command</module>
+        <module>CPdemo7_vault</module>
+        <module>CPdemo8_villager</module>
+        <module>CPdemo9_citizen2</module>
+    </modules>
+    <name>CPdemo-minecraftplugin</name>
+</project>
