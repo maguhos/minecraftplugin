@@ -2,4 +2,4 @@ name: CPdemo8
 main: dk.codingpirates.cpdemo.CPdemo8
 version: 1.0.0
 api-version: 1.13
-depend: [Vault]
+depend: 
