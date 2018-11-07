@@ -5,13 +5,9 @@
  */
 package dk.codingpirates.cpdemo6;
 
-import dk.codingpirates.cpdemo6.CommandManager;
-import java.util.Iterator;
-import org.bukkit.Bukkit;
-import org.bukkit.Keyed;
+import dk.codingpirates.lib.CommandManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Recipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**

@@ -1,4 +1,4 @@
-package dk.codingpirates.cpdemo6;
+package dk.codingpirates.lib;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
