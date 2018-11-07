@@ -1,4 +1,4 @@
-package dk.codingpirates.cpdemo7;
+package dk.codingpirates.lib;
 
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;

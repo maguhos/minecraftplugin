@@ -1,5 +1,6 @@
 package dk.codingpirates.cpdemo7;
 
+import dk.codingpirates.lib.EcoVault;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -8,7 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 /* 
-Demo6 tiføjer en ny kommando
+Demo7 viser hvor mange penge du har
  */
 public class CPdemo7 extends JavaPlugin {
 
