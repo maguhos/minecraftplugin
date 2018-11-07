@@ -2,7 +2,7 @@
  *
  * @author maguhos
  */
-package dk.codingpirates.cpdemo3;
+package dk.codingpirates.lib;
 
 import java.io.File;
 import java.io.IOException;
