@@ -1,4 +1,4 @@
-package dk.codingpirates.cpdemo5;
+package dk.codingpirates.lib;
 
 import java.util.HashMap;
 import java.util.Map;

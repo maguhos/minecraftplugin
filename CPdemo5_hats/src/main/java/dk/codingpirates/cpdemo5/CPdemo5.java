@@ -1,13 +1,10 @@
 package dk.codingpirates.cpdemo5;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import dk.codingpirates.lib.HatManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
-import static org.bukkit.Bukkit.getServer;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
