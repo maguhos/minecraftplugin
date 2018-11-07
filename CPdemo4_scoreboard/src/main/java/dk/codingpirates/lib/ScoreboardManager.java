@@ -2,7 +2,7 @@
  *
  * @author maguhos
  */
-package dk.codingpirates.cpdemo4;
+package dk.codingpirates.lib;
 
 import java.util.Arrays;
 import java.util.Collection;

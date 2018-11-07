@@ -1,10 +1,10 @@
 package dk.codingpirates.cpdemo4;
 
+import dk.codingpirates.lib.ScoreboardManager;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
-import static org.bukkit.Bukkit.getServer;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
